@@ -1,0 +1,123 @@
+[
+    {
+      "User": {
+        "name": "Sam Altman",
+        "email": "samaltman123@gmail.com"
+      },
+      "Risk level": "Medium",
+      "Trigger Reason": "IP Change",
+      "Action Reason": "Flagged",
+      "In queue for": "4 days",
+      "Time to close": "14 days",
+      "Date added on": "12 Oct,2023",
+      "Previously reviewed": {
+        "update": "Yes",
+        "last-date": "23 Aug,2023"
+      },
+      "Action taken by": {
+        "name": "Neil",
+        "email": "neil@onjuno.com"
+      }
+    },
+    {
+        "User": {
+          "name": "Sameer Choubey",
+          "email": "sameerchoubey123@gmail.com"
+        },
+        "Risk level": "High",
+        "Trigger Reason": "FIFO",
+        "Action Reason": "Closed",
+        "In queue for": "4 days",
+        "Time to close": "14 days",
+        "Date added on": "12 Oct,2023",
+        "Previously reviewed": {
+          "update": "No",
+          "last-date": " "
+        },
+        "Action taken by": {
+          "name": "Pratik",
+          "email": "pratik@onjuno.com"
+        }
+      },
+      {
+        "User": {
+          "name": "Adarsh Panikkar",
+          "email": "adarsh@onjuno.com"
+        },
+        "Risk level": "Low",
+        "Trigger Reason": "IP Change",
+        "Action Reason": "Cleared",
+        "In queue for": "5 days",
+        "Time to close": "15 days",
+        "Date added on": "12 Oct,2023",
+        "Previously reviewed": {
+          "update": "No",
+          "last-date": " "
+        },
+        "Action taken by": {
+          "name": "Prasanth",
+          "email": "prasanth@onjuno.com"
+        }
+      },
+      {
+        "User": {
+          "name": "Pratik Shetty",
+          "email": "pratik3@gmail.com"
+        },
+        "Risk level": "High",
+        "Trigger Reason": "FIFO",
+        "Action Reason": "SOI Requested",
+        "In queue for": "5 days",
+        "Time to close": "15 days",
+        "Date added on": "12 Oct,2023",
+        "Previously reviewed": {
+          "update": "Yes",
+          "last-date": "12 Sep, 2023"
+        },
+        "Action taken by": {
+          "name": "Rasleen Kaur",
+          "email": "rasleen@onjuno.com"
+        }
+      },
+      {
+        "User": {
+          "name": "Elon Musk",
+          "email": "elon@twitterceo.com"
+        },
+        "Risk level": "Low",
+        "Trigger Reason": "FIFO",
+        "Action Reason": "Flagged",
+        "In queue for": "5 days",
+        "Time to close": "15 days",
+        "Date added on": "12 Oct,2023",
+        "Previously reviewed": {
+          "update": "Yes",
+          "last-date": "12 Sep, 2023"
+        },
+        "Action taken by": {
+          "name": "Pratik Shetty",
+          "email": "pratik@onjuno.com"
+        }
+      },
+      {
+        "User": {
+          "name": "Trina Kundu",
+          "email": "trina@onjuno.com"
+        },
+        "Risk level": "Low",
+        "Trigger Reason": "FIFO",
+        "Action Reason": "Closed",
+        "In queue for": "5 days",
+        "Time to close": "15 days",
+        "Date added on": "12 Oct,2023",
+        "Previously reviewed": {
+          "update": "Yes",
+          "last-date": "12 Sep, 2023"
+        },
+        "Action taken by": {
+          "name": "Varun Deshpande",
+          "email": "varun@onjuno.com"
+        }
+      }
+  ]
+  
