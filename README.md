@@ -1,8 +1,38 @@
-# React + Vite
+# Juno Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Welcome to Juno Dashboard – A powerful React dashboard with Tailwind CSS styling!
 
-Currently, two official plugins are available:
+## Overview 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Juno Dashboard is a modern web application built with React and Tailwind CSS. It provides a sleek and intuitive user interface for monitoring and managing various aspects of your system.
+
+## Technologies Used 🛠️
+
+- React
+- Tailwind CSS
+- JavaScript
+- Vite
+
+## Features
+
+- **Pending and Completed Tables:** View and manage pending and completed tasks in organized tables.
+- **Search and Filter:** Easily search and filter data to find what you need.
+- **Close Account:** Quickly initiate the process to close user accounts.
+
+## Getting Started 🚀
+
+To run the project locally, follow these steps:
+
+1. Install dependencies: `npm install`
+2. Run the application: `npm run dev`
+
+
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+
+### Installation
+
+## Live Demo 🌐
+
+Check out the live demo on Netlify: [junoDashboard](https://junodashboard.netlify.app/)
