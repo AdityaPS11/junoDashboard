@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Closeaccount from "./closeAccount";
 import Pendingtable from "./pending";
 import Completedtable from "./completed";
@@ -7,6 +7,24 @@ import Searchfilter from "./searchFilter";
 const Header = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showCloseModal, setShowCloseModal] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [triggerReasonFilter, setTriggerReasonFilter] = useState("Trigger Reason");
+  const [riskLevelFilter, setRiskLevelFilter] = useState("Risk Level");
+  const [userData, setUserData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data.json");
+        const data = await response.json();
+        setUserData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleOpenCloseModal = () => {
     setShowCloseModal(true);
@@ -18,6 +36,12 @@ const Header = () => {
 
   const handleClick = (option) => {
     setSelectedOption(option);
+  };
+
+  const handleFilter = ({ searchTerm, riskLevelFilter, triggerReasonFilter }) => {
+    setSearchTerm(searchTerm);
+    setRiskLevelFilter(riskLevelFilter);
+    setTriggerReasonFilter(triggerReasonFilter);
   };
 
   return (
@@ -65,8 +89,8 @@ const Header = () => {
           
         </div>
         <div className="w-[950px] h-[2px] top-0 left-0 bg-[#e4e4e4] mt-[8px]" />
-        <Searchfilter/>
-        {selectedOption==="Completed"?<Completedtable/>:<Pendingtable/>}
+        <Searchfilter onFilter={handleFilter}/>
+        {selectedOption==="Completed"? <Completedtable userData={userData} searchTerm={searchTerm} riskLevelFilter={riskLevelFilter} triggerReasonFilter={triggerReasonFilter}/>: <Pendingtable userData={userData} searchTerm={searchTerm} riskLevelFilter={riskLevelFilter} triggerReasonFilter={triggerReasonFilter}/>}
       </div>
       <Closeaccount showModal={showCloseModal} onClose={handleCloseModal} />
 

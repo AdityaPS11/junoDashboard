@@ -1,26 +1,12 @@
+/* eslint-disable react/prop-types */
 // PendingTable.js
 import React from "react";
-import { useState, useEffect } from "react";
 
 const link = "./link.svg";
 const arrow = "./arrow.svg";
 
-const Pendingtable = () => {
-  const [userData, setUserData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/data.json");
-        const data = await response.json();
-        setUserData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+// eslint-disable-next-line react/prop-types
+const Pendingtable = ({ userData, searchTerm, riskLevelFilter}) => {
 
   return (
     <div className="mt-[70px] mb-[30px]">
@@ -33,8 +19,8 @@ const Pendingtable = () => {
               </div>
             </th>
             <th>
-              <div className="w-fit mt-[-1.00px] font-semibold text-[#050505] text-[12px] tracking-[0] leading-[18px] whitespace-nowrap">
-                Risk Level
+              <div className="flex w-fit mt-[-1.00px] font-semibold text-[#050505] text-[12px] tracking-[0] leading-[18px] whitespace-nowrap">
+                Risk Level <img src={arrow}/>
               </div>
             </th>
             <th>
@@ -43,13 +29,13 @@ const Pendingtable = () => {
               </div>
             </th>
             <th>
-              <div className="w-fit mt-[-1.00px] font-semibold text-[#050505] text-[12px] tracking-[0] leading-[18px] whitespace-nowrap">
-                In Queue For
+              <div className="flex w-fit mt-[-1.00px] font-semibold text-[#050505] text-[12px] tracking-[0] leading-[18px] whitespace-nowrap">
+                In Queue For <img src={arrow}/>
               </div>
             </th>
             <th>
-              <div className="w-fit mt-[-1.00px] font-semibold text-[#050505] text-[12px] tracking-[0] leading-[18px] whitespace-nowrap">
-                Date Added On
+              <div className="flex w-fit mt-[-1.00px] font-semibold text-[#050505] text-[12px] tracking-[0] leading-[18px] whitespace-nowrap">
+                Date Added On <img src={arrow}/>
               </div>
             </th>
             <th className="rounded-tr-[12px]">
@@ -61,6 +47,10 @@ const Pendingtable = () => {
         </thead>
         <tbody>
           {userData.map((user, index) => (
+            (searchTerm === "" || 
+              user.User.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              user.User.email.toLowerCase().includes(searchTerm.toLowerCase())) &&
+            (riskLevelFilter === "Risk Level" || user["Risk level"] === riskLevelFilter) && (
             <React.Fragment key={index}>
               <tr>
                 <td className="py-[16px] pl-6 [font-family:'Lettera_Text_LL-Medium',Helvetica] font-semibold text-[#050505] text-[14px] tracking-[0] leading-[18px] whitespace-nowrap">
@@ -132,7 +122,7 @@ const Pendingtable = () => {
                   </td>
                 </tr>
               )}
-            </React.Fragment>
+            </React.Fragment> )
           ))}
         </tbody>
       </table>
