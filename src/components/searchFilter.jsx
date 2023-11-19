@@ -45,7 +45,7 @@ const FilterComponent = ({ onFilter }) => {
         >
           <span>{triggerReasonFilter}</span>
           <svg
-            className={`ml-[110px] mt-[-12px] w-2.5 h-2.5 ms-3 transition-transform ${
+            className={`ml-[105px] mt-[-13px] w-2.5 h-2.5 transition-transform ${
               isDropdownOpen ? "rotate-180" : "rotate-0"
             }`}
             aria-hidden="true"
@@ -140,7 +140,7 @@ const FilterComponent = ({ onFilter }) => {
         >
           {riskLevelFilter}
           <svg
-            className={`ml-[80px] mt-[-12px] w-2.5 h-2.5 ms-3 transition-transform ${
+            className={`ml-[75px] mt-[-13px] w-2.5 h-2.5 transition-transform ${
               isRiskLevelDropdownOpen ? "rotate-180" : "rotate-0"
             }`}
             aria-hidden="true"
