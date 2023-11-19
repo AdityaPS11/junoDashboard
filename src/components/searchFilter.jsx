@@ -41,11 +41,11 @@ const FilterComponent = ({ onFilter }) => {
         <button
           id="triggerReasonDropdownButton"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          className="w-[130px] [font-family:'Lettera_Text_LL-Medium',Helvetica] h-[34px] bg-[#F5F5F5]  text-[12px] font-semibold text-[#777676]  items-center gap-[6px] px-[12px] py-[8px] rounded focus:outline-non"
+          className="w-[135px] [font-family:'Lettera_Text_LL-Medium',Helvetica] h-[34px] bg-[#F5F5F5]  text-[12px] font-semibold text-[#777676]  items-center gap-[6px] px-[10px] py-[8px] rounded focus:outline-non"
         >
           <span>{triggerReasonFilter}</span>
           <svg
-            className={`ml-[100px] mt-[-12px] w-2.5 h-2.5 ms-3 transition-transform ${
+            className={`ml-[105px] mt-[-12px] w-2.5 h-2.5 ms-3 transition-transform ${
               isDropdownOpen ? "rotate-180" : "rotate-0"
             }`}
             aria-hidden="true"
@@ -136,11 +136,11 @@ const FilterComponent = ({ onFilter }) => {
         <button
           id="triggerReasonDropdownButton"
           onClick={() => setIsRiskLevelDropdownOpen(!isRiskLevelDropdownOpen)}
-          className="mt-1 w-[105px] [font-family:'Lettera_Text_LL-Medium',Helvetica] h-[34px] bg-[#F5F5F5]  text-[12px] font-semibold text-[#777676]  items-center gap-[6px] px-[12px] py-[8px] rounded focus:outline-non"
+          className="mt-1 w-[108px] [font-family:'Lettera_Text_LL-Medium',Helvetica] h-[34px] bg-[#F5F5F5]  text-[12px] font-semibold text-[#777676]  items-center gap-[6px] px-[12px] py-[8px] rounded focus:outline-non"
         >
           {riskLevelFilter}
           <svg
-            className={`ml-[75px] mt-[-12px] w-2.5 h-2.5 ms-3 transition-transform ${
+            className={`ml-[76px] mt-[-12px] w-2.5 h-2.5 ms-3 transition-transform ${
               isRiskLevelDropdownOpen ? "rotate-180" : "rotate-0"
             }`}
             aria-hidden="true"
