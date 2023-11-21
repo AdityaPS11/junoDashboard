@@ -1,19 +1,27 @@
+/* eslint-disable react/prop-types */
 // FilterComponent.js
 import { useState } from "react";
 
 const search = "./search.svg";
 
-const FilterComponent = ({ onFilter }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [triggerReasonFilter, setTriggerReasonFilter] =
-    useState("Trigger Reason");
-  const [riskLevelFilter, setRiskLevelFilter] = useState("Risk Level");
+const Searchfilter = ({
+  onFilter,
+  searchTerm,
+  setSearchTerm,
+  triggerReasonFilter,
+  setTriggerReasonFilter,
+  riskLevelFilter,
+  setRiskLevelFilter,
+}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isRiskLevelDropdownOpen, setIsRiskLevelDropdownOpen] = useState(false);
 
   const handleFilter = () => {
     onFilter({ searchTerm, triggerReasonFilter, riskLevelFilter });
   };
+  // console.log(searchTerm);
+  // console.log(riskLevelFilter);
+  // console.log(triggerReasonFilter);
   const closeTriggerReasonDropdown = () => {
     setIsDropdownOpen(false);
   };
@@ -207,4 +215,4 @@ const FilterComponent = ({ onFilter }) => {
   );
 };
 
-export default FilterComponent;
+export default Searchfilter;

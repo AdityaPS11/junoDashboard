@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Closeaccount from "./closeAccount";
 import Pendingtable from "./pending";
 import Completedtable from "./completed";
@@ -8,7 +8,8 @@ const Header = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showCloseModal, setShowCloseModal] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [triggerReasonFilter, setTriggerReasonFilter] = useState("Trigger Reason");
+  const [triggerReasonFilter, setTriggerReasonFilter] =
+    useState("Trigger Reason");
   const [riskLevelFilter, setRiskLevelFilter] = useState("Risk Level");
   const [userData, setUserData] = useState([]);
 
@@ -38,7 +39,11 @@ const Header = () => {
     setSelectedOption(option);
   };
 
-  const handleFilter = ({ searchTerm, riskLevelFilter, triggerReasonFilter }) => {
+  const handleFilter = ({
+    searchTerm,
+    riskLevelFilter,
+    triggerReasonFilter,
+  }) => {
     setSearchTerm(searchTerm);
     setRiskLevelFilter(riskLevelFilter);
     setTriggerReasonFilter(triggerReasonFilter);
@@ -83,17 +88,37 @@ const Header = () => {
               className="rounded-[7px] h-[40px] items-center gap-[6px] px-[16px] py-[8px] text-[#D13B3B]  [font-family:'Lettera_Text_LL-Medium',Helvetica] font-medium text-[14px] cursor-pointer bg-[#F6D8D8]"
               onClick={handleOpenCloseModal}
             >
-             &#11198;{"      "}Close Account
+              &#11198;{"      "}Close Account
             </button>
           </div>
-          
         </div>
         <div className="w-[950px] h-[2px] top-0 left-0 bg-[#e4e4e4] mt-[8px]" />
-        <Searchfilter onFilter={handleFilter}/>
-        {selectedOption==="Completed"? <Completedtable userData={userData} searchTerm={searchTerm} riskLevelFilter={riskLevelFilter} triggerReasonFilter={triggerReasonFilter}/>: <Pendingtable userData={userData} searchTerm={searchTerm} riskLevelFilter={riskLevelFilter} triggerReasonFilter={triggerReasonFilter}/>}
+        <Searchfilter
+          onFilter={handleFilter}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          triggerReasonFilter={triggerReasonFilter}
+          setTriggerReasonFilter={setTriggerReasonFilter}
+          riskLevelFilter={riskLevelFilter}
+          setRiskLevelFilter={setRiskLevelFilter}
+        />
+        {selectedOption === "Completed" ? (
+          <Completedtable
+            userData={userData}
+            searchTerm={searchTerm}
+            riskLevelFilter={riskLevelFilter}
+            triggerReasonFilter={triggerReasonFilter}
+          />
+        ) : (
+          <Pendingtable
+            userData={userData}
+            searchTerm={searchTerm}
+            riskLevelFilter={riskLevelFilter}
+            triggerReasonFilter={triggerReasonFilter}
+          />
+        )}
       </div>
       <Closeaccount showModal={showCloseModal} onClose={handleCloseModal} />
-
     </>
   );
 };
