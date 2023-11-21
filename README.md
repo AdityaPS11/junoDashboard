@@ -16,7 +16,7 @@ Juno Dashboard is a modern web application built with React and Tailwind CSS. It
 ## Features
 
 - **Pending and Completed Tables:** View and manage pending and completed tasks in organized tables.
-- **Search and Filter:** Easily search and filter data to find what you need.
+- **Search and Filter:** Easily search and filter data to find what you need. The search and filter functionality includes dynamic options for risk level and search term,                            allowing users to customize and narrow down their data based on chosen criteria.
 - **Close Account:** Quickly initiate the process to close user accounts.
 
 ## Getting Started 🚀
